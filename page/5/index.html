@@ -1,0 +1,321 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>曦曦的小窝 - Anywhere, it is a good in the past, recall the number of times many, all would be light.</title><meta name="author" content="曦曦"><meta name="copyright" content="曦曦"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="欲买桂花同载酒">
+<meta property="og:type" content="website">
+<meta property="og:title" content="曦曦的小窝">
+<meta property="og:url" content="http://xihe.eu.org/page/5/index.html">
+<meta property="og:site_name" content="曦曦的小窝">
+<meta property="og:description" content="欲买桂花同载酒">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://xihe.eu.org/img/avatar.jpg">
+<meta property="article:author" content="曦曦">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xihe.eu.org/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="http://xihe.eu.org/page/5/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '曦曦的小窝',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><link rel="stylesheet" href="css/background.css"><link rel="stylesheet" href="css/mouse.css"><link rel="stylesheet" href="css/footer.css"><link rel="stylesheet" href="css/macWhite.css"><link rel="stylesheet" href="css/tag.css"><link rel="stylesheet" href="css/font.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load', preloader.endLoading)
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="web_bg" style="background-color: #efefef;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/myself/"><i class="fa-fw fas fa-heart"></i><span> 曦曦</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 小窝</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 面板</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/pay/"><i class="fa-fw fas fa-heart"></i><span> 打赏</span></a></li><li><a class="site-page child" href="/messageboard/"><i class="fa-fw fas fa-link"></i><span> 留言</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/img/index.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">曦曦的小窝</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/myself/"><i class="fa-fw fas fa-heart"></i><span> 曦曦</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 小窝</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 面板</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/pay/"><i class="fa-fw fas fa-heart"></i><span> 打赏</span></a></li><li><a class="site-page child" href="/messageboard/"><i class="fa-fw fas fa-link"></i><span> 留言</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">曦曦的小窝</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="mailto:xixiofficial@hotmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><header id="page-header" style="background-image: url(/img/index.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">曦曦的小窝</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/myself/"><i class="fa-fw fas fa-heart"></i><span> 曦曦</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 小窝</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 面板</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/pay/"><i class="fa-fw fas fa-heart"></i><span> 打赏</span></a></li><li><a class="site-page child" href="/messageboard/"><i class="fa-fw fas fa-link"></i><span> 留言</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title"></h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="mailto:xixiofficial@hotmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="post_cover left"><a href="/2022/08/12/15.markdown/" title="markdown指南"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/imgs/covers/cover16.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="markdown指南"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/12/15.markdown/" title="markdown指南">markdown指南</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-11T16:10:01.000Z" title="发表于 2022-08-12 00:10:01">2022-08-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Program-Language/">Program Language</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/markdown/">markdown</a></span></div><div class="content">前言这里只是简单介绍 Markdown 语言简介与编辑器推荐  Markdown 是什么Markdown 是一种轻量级的标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML（或者HTML）文档。它在编写文档、博客、论坛帖子等方面非常受欢迎，因为它的语法简洁，易于学习和使用。  Markdown 语言语法标题使用不同数量的#符号来表示不同级别的标题，从#（一级标题）到######（六级标题）。 123456# 一级标题## 二级标题### 三级标题#### 四级标题##### 五级标题###### 六级标题 文本格式• 加粗：使用**或__包裹文字，例如：**加粗的文字**或__加粗的文字__。• 斜体：使用*或_包裹文字，例如：*斜体的文字*或_斜体的文字_。• 删除线：使用~~包裹文字，例如：~~删除的文字~~。 列表• 无序列表：使用-、*或+开头，例如： 123- 项目一* 项目二+ 项目三 • 有序列表：使用数字加点开头，例如： 1231. 第一项2. 第二项3....</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/07/22/14.Linux/" title="Linux的命令"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/imgs/covers/cover14.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux的命令"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/07/22/14.Linux/" title="Linux的命令">Linux的命令</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-21T16:10:01.000Z" title="发表于 2022-07-22 00:10:01">2022-07-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/OS/">OS</a></span></div><div class="content">前言这里只是简单介绍Linux及其命令  Linux 系统概述Linux 是一种开源的类 Unix 操作系统内核，广泛应用于服务器、嵌入式设备和个人计算机。其核心特点包括：  多用户&#x2F;多任务：支持多用户同时操作和并行任务处理 文件系统：采用树状目录结构（&#x2F; 为根目录） 权限管理：严格的用户权限控制机制 命令行界面：通过 Shell 实现高效系统操作   核心命令分类详解文件与目录操作   命令 功能说明 常用参数示例    ls 列出目录内容 -l 详细信息-a 显示隐藏文件   cd 切换工作目录 cd ~ 返回家目录cd .. 返回上级目录   cp 复制文件&#x2F;目录 -r 递归复制目录-i 覆盖前提示   mv 移动&#x2F;重命名文件 mv old.txt new.txt   rm 删除文件 -rf 强制递归删除-i 交互式删除   mkdir 创建目录 -p 创建多级目录   find 文件搜索 find / -name &quot;*.log&quot;   系统信息与管理   命令 功能说明 使用示例    top 实时进程监控 按...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/06/20/13.%E6%B0%B4%E4%BB%99%E5%86%99%E6%B3%95/" title="水仙写法"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/imgs/covers/cover12.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="水仙写法"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/06/20/13.%E6%B0%B4%E4%BB%99%E5%86%99%E6%B3%95/" title="水仙写法">水仙写法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-06-19T16:10:01.000Z" title="发表于 2022-06-20 00:10:01">2022-06-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%AE%97%E6%B3%95/">算法</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%B0%B4%E4%BB%99%E8%8A%B1%E6%95%B0/">水仙花数</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Coding/">Coding</a></span></div><div class="content">前言我这里是Windows10&#x2F;11专业工作版(其他Windows版本也适用)如果你的设备是已经是结束支持的Windows7，请查阅其他相关是手册这里演示的代码为c++代码   水仙花数概念水仙花数是指一个3位正整数，其每个位上的数字的3次幂之和等于它本身 问题1-判断是否是水仙花数分析：满足条件每个位上的数字的3次幂之和等于它本身就是1、输入你要判断的数字2、求出每个位上的数字3、判断代码如下： 123456789101112131415#include&lt;iostream&gt;#include&lt;cmath&gt;int main(void)&#123;    int i ;    std::cin&gt;&gt;i; // 输入一个三位数        int a = i%10; //求个位        int b = i/10%10; // 求十位        int c = i /100;  // 求百位        if (pow(a,3)+pow(b,3)+pow(c,3) == i ) // 用概念判断一下是否是三位数         ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/06/06/13.years1/" title="一周年 - 特别篇"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/contents/Anniversary/1/c.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一周年 - 特别篇"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/06/06/13.years1/" title="一周年 - 特别篇">一周年 - 特别篇</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-06-05T16:20:01.000Z" title="发表于 2022-06-06 00:20:01">2022-06-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%89%B9%E5%88%AB%E7%AF%87/">特别篇</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Anniversary/">Anniversary</a></span></div><div class="content">【我的小窝也一岁了】从2021年6月搭起第一个Hexo框架至今，这个用Markdown垒成的小窝，竟已在网络荒原上生长出了属于自己的根系。还记得初遇Hexo时，被它“快速、简洁、极客”的气质吸引——没有复杂的后台，只需专注文字与代码，像在数字世界里辟出一块“手写日记”的自留地，而这一种，就是365天。 最初的日子，全靠翻官方文档和GitHubIssue磕磕绊绊：跟着教程敲 hexo new...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/05/15/12.cloud_stage/" title="简单搭建自己的云平台"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/imgs/covers/cover13.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="简单搭建自己的云平台"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/05/15/12.cloud_stage/" title="简单搭建自己的云平台">简单搭建自己的云平台</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-14T16:10:01.000Z" title="发表于 2022-05-15 00:10:01">2022-05-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Sever/">Sever</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Cloud/">Cloud</a></span></div><div class="content">前言我这里是Windows10&#x2F;11专业工作版(其他Windows版本也适用)如果你的设备是已经是结束支持的Windows7，请查阅其他相关是手册什么是云平台简单概念云平台是基于云计算技术，为用户提供计算、存储、网络等一系列信息技术资源和服务的平台 核心组成部分基础设施即服务（IaaS）：提供基础的计算、存储和网络资源，用户可按需租用服务器、存储空间、网络带宽等，如阿里云的弹性计算服务。平台即服务（PaaS）：在IaaS基础上，提供软件开发、运行和管理的平台，用户只需专注于开发应用，无需管理底层基础设施，如谷歌的App...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/04/15/11.docker/" title="简单使用docker，使你的vps更加高效"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/imgs/covers/cover6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="简单使用docker，使你的vps更加高效"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/04/15/11.docker/" title="简单使用docker，使你的vps更加高效">简单使用docker，使你的vps更加高效</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-04-14T16:10:01.000Z" title="发表于 2022-04-15 00:10:01">2022-04-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Sever/">Sever</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Cloud/">Cloud</a></span></div><div class="content">前言我这里是使用的是CentOS 7 ,由于linux发行版本问题，可能有出入，请多包涵  什么是dockerDocker 是一种用于开发、部署和运行应用程序的开源平台，它利用容器化技术来实现应用程序的打包和隔离  容器化技术容器化是一种轻量级的虚拟化技术，它允许你将应用程序及其依赖项打包到一个独立的容器中。每个容器就像一个小型的、自给自足的虚拟机，包含了运行应用程序所需的一切，如代码、运行时环境、系统工具和库等。 Docker 的优势环境一致性：Docker 可以确保应用程序在开发、测试和生产环境中的一致性。开发人员可以在本地创建一个与生产环境相同的 Docker 容器，这样就可以避免因环境差异导致的问题。资源利用率高：相较于传统虚拟机，Docker 容器不需要额外的操作系统，它直接运行在宿主机的内核上，因此占用的资源更少，启动速度更快。便于部署和扩展：Docker 容器可以快速部署到任何支持 Docker 的环境中，无论是物理服务器、虚拟机还是云平台。同时，通过 Docker 的集群管理工具，可以轻松实现应用程序的扩展和负载均衡。隔离性：每个 Docker...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/03/13/10.httpd/" title="使用Linux搭建http服务器，实现你的博主梦"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/imgs/covers/cover2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用Linux搭建http服务器，实现你的博主梦"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/03/13/10.httpd/" title="使用Linux搭建http服务器，实现你的博主梦">使用Linux搭建http服务器，实现你的博主梦</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-03-12T17:21:01.000Z" title="发表于 2022-03-13 01:21:01">2022-03-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Sever/">Sever</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Cloud/">Cloud</a></span></div><div class="content">前言这里只是简单介绍与搭建http服务器！！！  什么是http服务器HTTP服务器，也称为Web服务器，是一种计算机程序，它驻留在因特网上，主要功能是接收并处理来自Web浏览器等客户端的请求，并返回相应的响应。此外，HTTP服务器还可以用于存储和提供网站文件，以便全球用户可以浏览；同时，也可以存储和提供数据文件，供全球用户下载。如何搭建http服务器前期准备确认centOS版本登录到 CentOS 7 系统，打开终端，输入下面的命令，看到 “CentOS Linux release 7.x” 即表示版本正确。 1cat /etc/redhat-release 更新系统组件在终端执行下面的命令，更新系统软件包，避免后续安装出现软件冲突问题。 1sudo yum update -y &amp;&amp; sudo yum upgrade -y  Apache HTTP 服务什么是Apache常简称为 Apache，是 Apache 软件基金会开发和维护的一款开源的 HTTP 服务器软件。作为互联网基础设施中关键的一部分，它能处理客户端（如网页浏览器）发送的 HTTP...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/02/21/9.yarn/" title="yarn的使用"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/imgs/covers/cover11.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="yarn的使用"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/02/21/9.yarn/" title="yarn的使用">yarn的使用</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-02-21T03:21:01.000Z" title="发表于 2022-02-21 11:21:01">2022-02-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tool/">tool</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/yarn/">yarn</a></span></div><div class="content">前言我这里是macOS Catalina（10.15），如果是macOS 11（big sur） 和 macOS 12（Monterey）也适用。老版本的macOS有些不被支持，请查阅相关文档什么是yarnYarn 是由 Facebook 于 2016 年发布的一款包管理工具，旨在取代 npm（Node Package Manager）。它的主要目的是解决 npm 的一些缺点，并提供更高级的包管理功能，以提高开发效率 。Yarn 的特点速度快：Yarn 缓存了每个下载过的包，所以再次使用时无需重复下载。同时利用并行下载以最大化资源利用率，因此安装速度更快。安全性高：在执行代码之前，Yarn 会通过算法校验每个安装包的完整性，确保包的安全性 。可靠性强：使用详细、简洁的锁文件格式和明确的安装算法，Yarn 能够保证在不同系统上无差异的工作 。安装 Yarn你可以通过 npm 来安装 Yarn： 1npm install -g yarn 安装完成后，可以通过以下命令查看 Yarn 的版本： 1yarn -v  常用命令查看 Yarn 配置： yarn config list修改...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/01/18/8.pip/" title="修改python的pip源"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/imgs/covers/cover7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="修改python的pip源"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/01/18/8.pip/" title="修改python的pip源">修改python的pip源</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-18T05:22:11.000Z" title="发表于 2022-01-18 13:22:11">2022-01-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tool/">tool</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/pip/">pip</a></span></div><div class="content">前言我这里是Windows10&#x2F;11专业工作版(其他Windows版本也适用)如果你的设备是已经是结束支持的Windows7，请查阅其他相关是手册什么是pippip 是 Python 包管理工具，该工具提供了对Python 包的查找、下载、安装、卸载的功能。目前如果你在 python.org 下载最新版本的安装包，则是已经自带了该工具。注意：Python 2.7.9 + 或 Python 3.4+ 以上版本都自带 pip 工具。修改pip在使用Python安装包工具pip时经常会出现下载很慢的情况，这其中有很大一部分原因和pip的源有关.在我们安装python后，通常python解释器自带pip这个工具，但是这里pip是设置的默认源，也就是官方源：https://pypi.org/simple这个源在国内的下载速度是很慢的，所以我们为了提高包的下载速度我们可以通过换源来实现。 Python pip国内源路径阿里云 http://mirrors.aliyun.com/pypi/simple/豆瓣(douban)...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/01/18/8.%E7%8B%82%E6%9A%B4Windows/" title="windows 11/10 的卓越性能模式？？"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/imgs/Tops/top6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="windows 11/10 的卓越性能模式？？"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/01/18/8.%E7%8B%82%E6%9A%B4Windows/" title="windows 11/10 的卓越性能模式？？">windows 11/10 的卓越性能模式？？</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-18T05:22:11.000Z" title="发表于 2022-01-18 13:22:11">2022-01-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Windows/">Windows</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/tool/">tool</a></span></div><div class="content">前言我这里是Windows10&#x2F;11专业工作版(其他Windows版本也适用)如果你的设备是已经是结束支持的Windows7，请查阅其他相关是手册  Windows卓越性能模式：开启CPU鸡血状态的终极指南 卓越性能模式是微软专为高性能需求设计的隐藏电源方案，它能让CPU持续保持”鸡血状态”，尤其适合游戏玩家和专业用户。但请注意：开启后会显著增加供电负担和散热需求，非工作站系统需手动开启。  一、卓越性能模式核心解析1. 工作原理与特性   特性 平衡模式 高性能模式 卓越性能模式    CPU基础频率 动态调整 保持较高 始终维持最高   睿频响应速度 中等 较快 即时响应   硬盘休眠策略 激进 保守 永不休眠   核心休眠状态 C1-C6 C1-C3 仅C1   适用场景 日常办公 游戏&#x2F;设计 极致性能需求   2. 适用系统版本 ✅ 原生支持：Windows 10&#x2F;11 企业版&#x2F;工作站版 ⚠️ 需手动开启：Windows 10&#x2F;11 专业版&#x2F;家庭版 ❌ 不支持：Windows...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/4/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#content-inner">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/#content-inner">6</a><a class="extend next" rel="next" href="/page/6/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">曦曦</div><div class="author-info-description">欲买桂花同载酒</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" href="https://xihe.eu.org"><i class="fas fa-heart"></i><span>回到小窝</span></a><div class="card-info-social-icons"><a class="social-icon" href="mailto:xixiofficial@hotmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is XiXi‘s Blog !</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/06/06/50.year4/" title="四周年 - 特别篇"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/contents/Anniversary/4/c.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="四周年 - 特别篇"/></a><div class="content"><a class="title" href="/2025/06/06/50.year4/" title="四周年 - 特别篇">四周年 - 特别篇</a><time datetime="2025-06-05T17:20:01.000Z" title="发表于 2025-06-06 01:20:01">2025-06-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/05/12/49.pyQT_book_manager_system/" title="pyQt项目之图书管理系统"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/imgs/Tops/top48.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="pyQt项目之图书管理系统"/></a><div class="content"><a class="title" href="/2025/05/12/49.pyQT_book_manager_system/" title="pyQt项目之图书管理系统">pyQt项目之图书管理系统</a><time datetime="2025-05-12T01:00:25.000Z" title="发表于 2025-05-12 09:00:25">2025-05-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/05/03/48.QT%E4%B8%8EPYQT/" title="pyQt对比Qt"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/imgs/Tops/top49.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="pyQt对比Qt"/></a><div class="content"><a class="title" href="/2025/05/03/48.QT%E4%B8%8EPYQT/" title="pyQt对比Qt">pyQt对比Qt</a><time datetime="2025-05-03T02:28:21.000Z" title="发表于 2025-05-03 10:28:21">2025-05-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/15/47.chrome_txt/" title="优雅的使用python获取网站上的文字"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/imgs/Tops/top47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="优雅的使用python获取网站上的文字"/></a><div class="content"><a class="title" href="/2025/04/15/47.chrome_txt/" title="优雅的使用python获取网站上的文字">优雅的使用python获取网站上的文字</a><time datetime="2025-04-15T11:28:21.000Z" title="发表于 2025-04-15 19:28:21">2025-04-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/03/46.VScode/" title="VScode装上插件，直接起飞"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/imgs/covers/cover47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="VScode装上插件，直接起飞"/></a><div class="content"><a class="title" href="/2025/03/03/46.VScode/" title="VScode装上插件，直接起飞">VScode装上插件，直接起飞</a><time datetime="2025-03-03T08:58:57.000Z" title="发表于 2025-03-03 16:58:57">2025-03-03</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/FreeBSD/"><span class="card-category-list-name">FreeBSD</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Linux/"><span class="card-category-list-name">Linux</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OS/"><span class="card-category-list-name">OS</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Program-Language/"><span class="card-category-list-name">Program Language</span><span class="card-category-list-count">25</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Projects/"><span class="card-category-list-name">Projects</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Sever/"><span class="card-category-list-name">Sever</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Tools/"><span class="card-category-list-name">Tools</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Windows/"><span class="card-category-list-name">Windows</span><span class="card-category-list-count">3</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Web/" style="font-size: 1.1em; color: #999">Web</a> <a href="/tags/yarn/" style="font-size: 1.1em; color: #999">yarn</a> <a href="/tags/Cloud/" style="font-size: 1.3em; color: #99a1ac">Cloud</a> <a href="/tags/Language-knowledge/" style="font-size: 1.5em; color: #99a9bf">Language knowledge</a> <a href="/tags/Framework/" style="font-size: 1.2em; color: #999da3">Framework</a> <a href="/tags/ftp/" style="font-size: 1.1em; color: #999">ftp</a> <a href="/tags/markdown/" style="font-size: 1.1em; color: #999">markdown</a> <a href="/tags/Windows-Dynamic-Desktop/" style="font-size: 1.1em; color: #999">Windows Dynamic Desktop</a> <a href="/tags/%E6%B0%B4%E4%BB%99%E8%8A%B1%E6%95%B0/" style="font-size: 1.1em; color: #999">水仙花数</a> <a href="/tags/Office/" style="font-size: 1.1em; color: #999">Office</a> <a href="/tags/chrome/" style="font-size: 1.2em; color: #999da3">chrome</a> <a href="/tags/pip/" style="font-size: 1.1em; color: #999">pip</a> <a href="/tags/Hello/" style="font-size: 1.1em; color: #999">Hello</a> <a href="/tags/tool/" style="font-size: 1.3em; color: #99a1ac">tool</a> <a href="/tags/OS/" style="font-size: 1.3em; color: #99a1ac">OS</a> <a href="/tags/Coding/" style="font-size: 1.4em; color: #99a5b6">Coding</a> <a href="/tags/homebrew/" style="font-size: 1.1em; color: #999">homebrew</a> <a href="/tags/Lan/" style="font-size: 1.1em; color: #999">Lan</a> <a href="/tags/node/" style="font-size: 1.1em; color: #999">node</a> <a href="/tags/%E6%AF%95%E4%B8%9A/" style="font-size: 1.1em; color: #999">毕业</a> <a href="/tags/CentOS/" style="font-size: 1.1em; color: #999">CentOS</a> <a href="/tags/Anniversary/" style="font-size: 1.3em; color: #99a1ac">Anniversary</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.1em; color: #999">算法</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      <a class="card-more-btn" href="/archives/"
+            title="查看更多">
+            <i class="fas fa-angle-right"></i>
+          </a>
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/06/">
+            <span class="card-archive-list-date">
+              六月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/05/">
+            <span class="card-archive-list-date">
+              五月 2025
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/04/">
+            <span class="card-archive-list-date">
+              四月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/03/">
+            <span class="card-archive-list-date">
+              三月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/02/">
+            <span class="card-archive-list-date">
+              二月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/01/">
+            <span class="card-archive-list-date">
+              一月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/12/">
+            <span class="card-archive-list-date">
+              十二月 2024
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/11/">
+            <span class="card-archive-list-date">
+              十一月 2024
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">57</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">54.9k</div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-06-17T16:05:16.907Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2025 By 曦曦</div><div class="footer_custom_text">欢迎访问本站，希望本站的内容可以帮助到你</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  },
+  processSubtitle: (content, extraContents = []) => {
+    if (true) {
+      const sub = ["历经万般红尘劫，犹如凉风轻拂面","我想成为一个温柔的人，因为曾经被温柔的人那样对待","从此始感到成人的寂寞，更喜欢梦中道路的迷离","醉后不知天在水，满船清梦压星河","阳光的酒调得很淡，却很醇，浅浅地斟在每一个杯形的小野花里","时光的沙漏里，细沙流走的是光阴。淡淡檀香里，裊袅燃尽的是光阴","花开如火，也如寂寞","酴靡落尽，犹赖有梨花","一定要爱着点什么，恰似草木对光阴的钟情","被酒莫惊春睡重，赌书消得泼茶香，当时只道是寻常","愿所有梦见过远方的人，心有惊雷，生似静湖","这个世界。上没有不带伤的人，真正能治愈自己的，只有自己","世间，恒能引动我的，唯日月星辰之姿、 山川湖海之美","人安静地生活，哪怕是静静地听着风声，亦能感受到诗意的生活","容颜会老去，四季不会停。那些散碎在笔尖的光阴，寂静欢喜","如果五月的花香有其源自，如果十二月的星光有其出发的处所，我知道,你便是从那里来的"].slice()
+
+      if (extraContents.length > 0) {
+        sub.unshift(...extraContents)
+      }
+
+      if (typeof content === 'string') {
+        sub.unshift(content)
+      } else if (Array.isArray(content)) {
+        sub.unshift(...content)
+      }
+
+      sub.length > 0 && typedJSFn.init(sub)
+    } else {
+      document.getElementById('subtitle').textContent = typeof content === 'string' ? content :
+        (Array.isArray(content) && content.length > 0 ? content[0] : '')
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  typedJSFn.processSubtitle(["历经万般红尘劫，犹如凉风轻拂面","我想成为一个温柔的人，因为曾经被温柔的人那样对待","从此始感到成人的寂寞，更喜欢梦中道路的迷离","醉后不知天在水，满船清梦压星河","阳光的酒调得很淡，却很醇，浅浅地斟在每一个杯形的小野花里","时光的沙漏里，细沙流走的是光阴。淡淡檀香里，裊袅燃尽的是光阴","花开如火，也如寂寞","酴靡落尽，犹赖有梨花","一定要爱着点什么，恰似草木对光阴的钟情","被酒莫惊春睡重，赌书消得泼茶香，当时只道是寻常","愿所有梦见过远方的人，心有惊雷，生似静湖","这个世界。上没有不带伤的人，真正能治愈自己的，只有自己","世间，恒能引动我的，唯日月星辰之姿、 山川湖海之美","人安静地生活，哪怕是静静地听着风声，亦能感受到诗意的生活","容颜会老去，四季不会停。那些散碎在笔尖的光阴，寂静欢喜","如果五月的花香有其源自，如果十二月的星光有其出发的处所，我知道,你便是从那里来的"])
+}
+typedJSFn.run(subtitleType)</script></div><script src="js/sakura.js"></script><script src="/js/custom.js"></script><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="落,霞,与,孤,鹜,齐,飞,秋,水,共,长,天,一,色" data-fontsize="30px" data-random="false" async="async"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body></html>

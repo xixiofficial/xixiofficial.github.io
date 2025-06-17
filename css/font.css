@@ -1,0 +1,11 @@
+@font-face{
+    font-family: 'xxzry';
+    font-display: swap;
+    src: url('../font/xxzry.ttf') format("truetype");
+}
+
+body {
+    font-family: "华文楷体", 'xxxry';
+    color: #2F4F4F;
+    font-style: italic;
+}

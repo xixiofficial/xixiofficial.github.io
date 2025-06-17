@@ -1,0 +1,260 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>简单认识CentOS7 | 曦曦的小窝</title><meta name="author" content="曦曦"><meta name="copyright" content="曦曦"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="一、CentOS 7 简介CentOS 7（Community Enterprise Operating System）是基于 Red Hat Enterprise Linux (RHEL) 7 源代码构建的免费开源企业级 Linux 发行版。由社区驱动开发维护，于2014年7月发布，提供长期支持至2024年6月30日。 核心特性与架构升级： 内核与初始化系统：  采用 Linux 3.10 内核">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简单认识CentOS7">
+<meta property="og:url" content="http://xihe.eu.org/2023/02/03/21.CentOS7/index.html">
+<meta property="og:site_name" content="曦曦的小窝">
+<meta property="og:description" content="一、CentOS 7 简介CentOS 7（Community Enterprise Operating System）是基于 Red Hat Enterprise Linux (RHEL) 7 源代码构建的免费开源企业级 Linux 发行版。由社区驱动开发维护，于2014年7月发布，提供长期支持至2024年6月30日。 核心特性与架构升级： 内核与初始化系统：  采用 Linux 3.10 内核">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://xihe.eu.org/img/imgs/Tops/top5.jpg">
+<meta property="article:published_time" content="2023-02-03T04:13:05.000Z">
+<meta property="article:modified_time" content="2023-02-19T05:30:58.000Z">
+<meta property="article:author" content="曦曦">
+<meta property="article:tag" content="CentOS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xihe.eu.org/img/imgs/Tops/top5.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "简单认识CentOS7",
+  "url": "http://xihe.eu.org/2023/02/03/21.CentOS7/",
+  "image": "http://xihe.eu.org/img/imgs/Tops/top5.jpg",
+  "datePublished": "2023-02-03T04:13:05.000Z",
+  "dateModified": "2023-02-19T05:30:58.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "曦曦",
+      "url": "https://xihe.eu.org"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="http://xihe.eu.org/2023/02/03/21.CentOS7/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '简单认识CentOS7',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="css/background.css"><link rel="stylesheet" href="css/mouse.css"><link rel="stylesheet" href="css/footer.css"><link rel="stylesheet" href="css/macWhite.css"><link rel="stylesheet" href="css/tag.css"><link rel="stylesheet" href="css/font.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load', preloader.endLoading)
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="web_bg" style="background-color: #efefef;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/myself/"><i class="fa-fw fas fa-heart"></i><span> 曦曦</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 小窝</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 面板</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/pay/"><i class="fa-fw fas fa-heart"></i><span> 打赏</span></a></li><li><a class="site-page child" href="/messageboard/"><i class="fa-fw fas fa-link"></i><span> 留言</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/imgs/covers/cover5.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">曦曦的小窝</span></a><a class="nav-page-title" href="/"><span class="site-name">简单认识CentOS7</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/myself/"><i class="fa-fw fas fa-heart"></i><span> 曦曦</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 小窝</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 面板</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/pay/"><i class="fa-fw fas fa-heart"></i><span> 打赏</span></a></li><li><a class="site-page child" href="/messageboard/"><i class="fa-fw fas fa-link"></i><span> 留言</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">简单认识CentOS7</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-02-03T04:13:05.000Z" title="发表于 2023-02-03 12:13:05">2023-02-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-02-19T05:30:58.000Z" title="更新于 2023-02-19 13:30:58">2023-02-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Linux/">Linux</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">687</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span></div></div></div></header><header id="page-header" style="background-image: url(/img/imgs/covers/cover5.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">曦曦的小窝</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/myself/"><i class="fa-fw fas fa-heart"></i><span> 曦曦</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 小窝</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 面板</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/pay/"><i class="fa-fw fas fa-heart"></i><span> 打赏</span></a></li><li><a class="site-page child" href="/messageboard/"><i class="fa-fw fas fa-link"></i><span> 留言</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">简单认识CentOS7</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-02-03T04:13:05.000Z" title="发表于 2023-02-03 12:13:05">2023-02-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-02-19T05:30:58.000Z" title="更新于 2023-02-19 13:30:58">2023-02-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Linux/">Linux</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">687</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="一、CentOS-7-简介"><a href="#一、CentOS-7-简介" class="headerlink" title="一、CentOS 7 简介"></a>一、CentOS 7 简介</h1><p><strong>CentOS 7</strong>（Community Enterprise Operating System）是基于 Red Hat Enterprise Linux (RHEL) 7 源代码构建的<strong>免费开源企业级 Linux 发行版</strong>。由社区驱动开发维护，于2014年7月发布，提供长期支持至2024年6月30日。</p>
+<h2 id="核心特性与架构升级："><a href="#核心特性与架构升级：" class="headerlink" title="核心特性与架构升级："></a>核心特性与架构升级：</h2><ol>
+<li><p><strong>内核与初始化系统</strong>：</p>
+<ul>
+<li>采用 Linux 3.10 内核</li>
+<li>使用 <code>systemd</code> 替代传统的 SysVinit（启动速度提升2倍）</li>
+<li>默认文件系统 XFS（支持最大500TB单文件）</li>
+</ul>
+</li>
+<li><p><strong>网络与安全</strong>：</p>
+<ul>
+<li>防火墙管理工具 <code>firewalld</code>（动态区域管理）</li>
+<li>默认启用 SELinux（增强安全策略）</li>
+<li>支持 NetworkManager 统一网络管理</li>
+</ul>
+</li>
+<li><p><strong>服务管理革新</strong>：</p>
+<ul>
+<li><code>systemctl</code> 命令替代 <code>service</code>&#x2F;<code>chkconfig</code></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl start httpd      <span class="comment"># 启动服务</span></span><br><span class="line">systemctl <span class="built_in">enable</span> httpd     <span class="comment"># 设置开机自启</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>虚拟化与容器</strong>：</p>
+<ul>
+<li>集成 KVM 虚拟化技术</li>
+<li>原生支持 Docker 容器（通过 <code>yum install docker</code>）</li>
+<li>提供 OpenStack 云计算组件</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h1 id="二、关键技术亮点"><a href="#二、关键技术亮点" class="headerlink" title="二、关键技术亮点"></a>二、关键技术亮点</h1><h2 id="1-系统启动流程优化"><a href="#1-系统启动流程优化" class="headerlink" title="1. 系统启动流程优化"></a>1. 系统启动流程优化</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[UEFI/SecureBoot] --&gt; B[systemd]</span><br><span class="line">B --&gt; C[并行启动服务]</span><br><span class="line">C --&gt; D[图形/命令行登录]</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-软件包管理（YUM-DNF）"><a href="#2-软件包管理（YUM-DNF）" class="headerlink" title="2. 软件包管理（YUM&#x2F;DNF）"></a>2. 软件包管理（YUM&#x2F;DNF）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装软件</span></span><br><span class="line"><span class="built_in">sudo</span> yum install nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新系统</span></span><br><span class="line"><span class="built_in">sudo</span> yum update</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看软件信息</span></span><br><span class="line">yum info httpd</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-存储管理革新"><a href="#3-存储管理革新" class="headerlink" title="3. 存储管理革新"></a>3. 存储管理革新</h2><ul>
+<li><strong>LVM 默认启用</strong>：支持在线卷调整</li>
+<li><strong>引入 Stratis</strong>：高级存储管理（类似ZFS&#x2F;Btrfs）</li>
+<li>支持 <strong>VDO</strong>（虚拟数据优化器）：重复数据删除</li>
+</ul>
+<hr>
+<h1 id="三、CentOS-7-总结"><a href="#三、CentOS-7-总结" class="headerlink" title="三、CentOS 7 总结"></a>三、CentOS 7 总结</h1><h2 id="核心优势："><a href="#核心优势：" class="headerlink" title="核心优势："></a>核心优势：</h2><p>✅ <strong>企业级稳定性</strong>：严格的测试流程保障系统可靠性<br>✅ <strong>长期支持</strong>：10年生命周期（5年全支持+5年维护）<br>✅ <strong>RHEL 兼容性</strong>：100% 二进制兼容，无缝迁移企业应用<br>✅ <strong>丰富生态</strong>：EPEL仓库提供额外8000+软件包<br>✅ <strong>零成本</strong>：完全免费获取和使用</p>
+<h2 id="典型应用场景："><a href="#典型应用场景：" class="headerlink" title="典型应用场景："></a>典型应用场景：</h2><ul>
+<li>企业服务器&#x2F;数据中心</li>
+<li>Web服务托管（Apache&#x2F;Nginx）</li>
+<li>数据库服务器（MySQL&#x2F;PostgreSQL）</li>
+<li>虚拟化平台（KVM&#x2F;OpenStack）</li>
+<li>容器化应用基础平台</li>
+</ul>
+<h2 id="生命周期时间线："><a href="#生命周期时间线：" class="headerlink" title="生命周期时间线："></a>生命周期时间线：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">timeline</span><br><span class="line">    title CentOS 7 生命周期</span><br><span class="line">    section 支持周期</span><br><span class="line">    2014-07 ： 正式发布</span><br><span class="line">    2019-08 ： 结束完整更新</span><br><span class="line">    2024-06 ： 终止所有支持</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>历史地位</strong>：<br>作为 CentOS 传统版本的最终主线发行版，CentOS 7 在 Linux 服务器领域占据主导地位多年。</p>
+</blockquote>
+<h2 id="迁移建议："><a href="#迁移建议：" class="headerlink" title="迁移建议："></a>迁移建议：</h2><ul>
+<li>现有用户：2024年6月前迁移至 CentOS Stream&#x2F;Rocky Linux&#x2F;AlmaLinux</li>
+<li>新部署：推荐选择 CentOS Stream 9 或其他 RHEL 衍生版</li>
+<li>学习价值：仍是理解企业 Linux 生态的最佳学习平台<br><strong>最终评价</strong>：CentOS 7 以其卓越的稳定性、免费的企业级功能和强大的社区支持，成为 Linux 服务器发展史上的里程碑版本，为全球数百万服务器提供坚实基石。</li>
+</ul>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://xihe.eu.org">曦曦</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://xihe.eu.org">https://xihe.eu.org</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">此文章版权归曦曦所有，如有转载，请注明来自原作者</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CentOS/">CentOS</a></div><div class="post-share"><div class="social-share" data-image="/img/imgs/Tops/top5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2023/01/15/20.ftp/" title="个人FTP服务器"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/imgs/Tops/top3.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">个人FTP服务器</div></div><div class="info-2"><div class="info-item-1">前言这里只是简单介绍与搭建ftp服务器！！！  一、FTP 服务器简介FTP（File Transfer Protocol）是一种用于在客户端与服务器之间传输文件的标准网络协议。它使用两个通道：  命令通道（默认端口21）：传输控制指令 数据通道（动态端口）：实际传输文件内容  核心特点： 跨平台支持：Windows&#x2F;Linux&#x2F;macOS 均可使用 两种工作模式： 主动模式：服务器主动连接客户端（易受防火墙阻挡） 被动模式：客户端连接服务器（推荐现代网络环境）   常见实现方案： vsftpd（Very Secure FTP Daemon）：轻量级、安全 ProFTPD：高度可配置 Pure-FTPd：专注于安全    典型应用场景： 网站文件上传&#x2F;下载 企业内部文件共享 自动化备份传输 跨平台文件交换   二、CentOS7 搭建 vsftpd 服务器指南1. 环境准备123456789# 更新系统sudo yum update -y# 检查防火墙状态sudo systemctl status firewalld#...</div></div></div></a><a class="pagination-related" href="/2023/03/13/22.QT/" title="QT介绍与简单实战"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/imgs/Tops/top6.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">QT介绍与简单实战</div></div><div class="info-2"><div class="info-item-1">前言这里只是简单介绍QT以及使用QT写一个简单的计算器  一、Qt 框架简介Qt 是一个跨平台的 C++ 应用程序开发框架，由挪威公司 Trolltech（现为 The Qt Company）开发。它不仅包含丰富的 GUI 组件库，还提供网络、数据库、多媒体等全栈解决方案。 核心特点： 跨平台支持：一次编写，编译部署到 Windows&#x2F;macOS&#x2F;Linux&#x2F;Android&#x2F;iOS 双授权模式：商业授权（闭源）和 LGPL&#x2F;GPL 开源授权 多语言绑定：支持 Python（PyQt&#x2F;PySide）、Rust 等语言 现代化架构：信号槽机制、元对象系统（MOC） 丰富模块： Qt Widgets：传统桌面UI组件 Qt Quick：声明式UI（QML）用于现代界面 Qt Network：网络通信 Qt SQL：数据库集成    应用场景： 工业控制软件（如汽车ECU） 医疗设备界面 嵌入式系统 跨平台桌面应用（如 WPS、VirtualBox）   二、Qt 安装指南1. Windows&#x2F;macOS 安装 访问...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">曦曦</div><div class="author-info-description">欲买桂花同载酒</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" href="https://xihe.eu.org"><i class="fas fa-heart"></i><span>回到小窝</span></a><div class="card-info-social-icons"><a class="social-icon" href="mailto:xixiofficial@hotmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is XiXi‘s Blog !</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81CentOS-7-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">一、CentOS 7 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E7%89%B9%E6%80%A7%E4%B8%8E%E6%9E%B6%E6%9E%84%E5%8D%87%E7%BA%A7%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">核心特性与架构升级：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E4%BA%AE%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">二、关键技术亮点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B%E4%BC%98%E5%8C%96"><span class="toc-number">2.1.</span> <span class="toc-text">1. 系统启动流程优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86%EF%BC%88YUM-DNF%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">2. 软件包管理（YUM&#x2F;DNF）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E9%9D%A9%E6%96%B0"><span class="toc-number">2.3.</span> <span class="toc-text">3. 存储管理革新</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81CentOS-7-%E6%80%BB%E7%BB%93"><span class="toc-number">3.</span> <span class="toc-text">三、CentOS 7 总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E4%BC%98%E5%8A%BF%EF%BC%9A"><span class="toc-number">3.1.</span> <span class="toc-text">核心优势：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B8%E5%9E%8B%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%EF%BC%9A"><span class="toc-number">3.2.</span> <span class="toc-text">典型应用场景：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%97%B6%E9%97%B4%E7%BA%BF%EF%BC%9A"><span class="toc-number">3.3.</span> <span class="toc-text">生命周期时间线：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%81%E7%A7%BB%E5%BB%BA%E8%AE%AE%EF%BC%9A"><span class="toc-number">3.4.</span> <span class="toc-text">迁移建议：</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/06/06/50.year4/" title="四周年 - 特别篇"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/contents/Anniversary/4/c.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="四周年 - 特别篇"/></a><div class="content"><a class="title" href="/2025/06/06/50.year4/" title="四周年 - 特别篇">四周年 - 特别篇</a><time datetime="2025-06-05T17:20:01.000Z" title="发表于 2025-06-06 01:20:01">2025-06-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/05/12/49.pyQT_book_manager_system/" title="pyQt项目之图书管理系统"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/imgs/Tops/top48.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="pyQt项目之图书管理系统"/></a><div class="content"><a class="title" href="/2025/05/12/49.pyQT_book_manager_system/" title="pyQt项目之图书管理系统">pyQt项目之图书管理系统</a><time datetime="2025-05-12T01:00:25.000Z" title="发表于 2025-05-12 09:00:25">2025-05-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/05/03/48.QT%E4%B8%8EPYQT/" title="pyQt对比Qt"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/imgs/Tops/top49.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="pyQt对比Qt"/></a><div class="content"><a class="title" href="/2025/05/03/48.QT%E4%B8%8EPYQT/" title="pyQt对比Qt">pyQt对比Qt</a><time datetime="2025-05-03T02:28:21.000Z" title="发表于 2025-05-03 10:28:21">2025-05-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/15/47.chrome_txt/" title="优雅的使用python获取网站上的文字"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/imgs/Tops/top47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="优雅的使用python获取网站上的文字"/></a><div class="content"><a class="title" href="/2025/04/15/47.chrome_txt/" title="优雅的使用python获取网站上的文字">优雅的使用python获取网站上的文字</a><time datetime="2025-04-15T11:28:21.000Z" title="发表于 2025-04-15 19:28:21">2025-04-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/03/46.VScode/" title="VScode装上插件，直接起飞"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/loading.gif" data-original="/img/imgs/covers/cover47.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="VScode装上插件，直接起飞"/></a><div class="content"><a class="title" href="/2025/03/03/46.VScode/" title="VScode装上插件，直接起飞">VScode装上插件，直接起飞</a><time datetime="2025-03-03T08:58:57.000Z" title="发表于 2025-03-03 16:58:57">2025-03-03</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2025 By 曦曦</div><div class="footer_custom_text">欢迎访问本站，希望本站的内容可以帮助到你</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"></div><script src="js/sakura.js"></script><script src="/js/custom.js"></script><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="落,霞,与,孤,鹜,齐,飞,秋,水,共,长,天,一,色" data-fontsize="30px" data-random="false" async="async"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body></html>

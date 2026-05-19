@@ -1,0 +1,276 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>OpenClaw | 曦曦的小窝</title><meta name="author" content="曦曦"><meta name="copyright" content="曦曦"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="总述OpenClaw（小龙虾） 是本地可部署的 AI 助手框架，支持对接大模型、接入飞书 &#x2F; 企业微信等渠道。macOS 13 上核心要点：  必须 Node.js 22+ 用 官方一键脚本 安装 飞书用 WebSocket 长连接（最稳、不用公网 &#x2F;ngrok） 飞书配置：AppID + AppSecret + 权限 + 事件订阅   macOS 13 环境准备（必须）打开终">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenClaw">
+<meta property="og:url" content="http://example.com/2026/04/05/61.OpenClaw/index.html">
+<meta property="og:site_name" content="曦曦的小窝">
+<meta property="og:description" content="总述OpenClaw（小龙虾） 是本地可部署的 AI 助手框架，支持对接大模型、接入飞书 &#x2F; 企业微信等渠道。macOS 13 上核心要点：  必须 Node.js 22+ 用 官方一键脚本 安装 飞书用 WebSocket 长连接（最稳、不用公网 &#x2F;ngrok） 飞书配置：AppID + AppSecret + 权限 + 事件订阅   macOS 13 环境准备（必须）打开终">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/imgs/covers/cover33.jpg">
+<meta property="article:published_time" content="2026-04-04T19:21:01.000Z">
+<meta property="article:modified_time" content="2026-04-05T14:36:01.000Z">
+<meta property="article:author" content="曦曦">
+<meta property="article:tag" content="OpenClaw">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/imgs/covers/cover33.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "OpenClaw",
+  "url": "http://example.com/2026/04/05/61.OpenClaw/",
+  "image": "http://example.com/img/imgs/covers/cover33.jpg",
+  "datePublished": "2026-04-04T19:21:01.000Z",
+  "dateModified": "2026-04-05T14:36:01.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "曦曦",
+      "url": "https://xihese.eu.org"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="http://example.com/2026/04/05/61.OpenClaw/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":true,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'OpenClaw',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      if ($loadingBox.classList.contains('loaded')) return
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+
+  if (document.readyState === 'complete') {
+    preloader.endLoading()
+  } else {
+    window.addEventListener('load', preloader.endLoading)
+    document.addEventListener('DOMContentLoaded', preloader.endLoading)
+    // Add timeout protection: force end after 7 seconds
+    setTimeout(preloader.endLoading, 7000)
+  }
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div class="bg-animation" id="web_bg" style="background-color: #efefef;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-university"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-sitemap"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 面板</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/pay/"><i class="fa-fw fa fa-ils"></i><span> 打赏</span></a></li><li><a class="site-page child" href="/messageboard/"><i class="fa-fw fa fa-asterisk"></i><span> 留言</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/myself/"><i class="fa-fw fas fa-sun"></i><span> 曦曦</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 小窝</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/imgs/Tops/top23.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">曦曦的小窝</span></a><a class="nav-page-title" href="/"><span class="site-name">OpenClaw</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-university"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-sitemap"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 面板</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/pay/"><i class="fa-fw fa fa-ils"></i><span> 打赏</span></a></li><li><a class="site-page child" href="/messageboard/"><i class="fa-fw fa fa-asterisk"></i><span> 留言</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/myself/"><i class="fa-fw fas fa-sun"></i><span> 曦曦</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 小窝</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">OpenClaw</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-04-04T19:21:01.000Z" title="发表于 2026-04-05 03:21:01">2026-04-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-04-05T14:36:01.000Z" title="更新于 2026-04-05 22:36:01">2026-04-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Tools/">Tools</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="总述"><a href="#总述" class="headerlink" title="总述"></a>总述</h1><p>OpenClaw（小龙虾） 是本地可部署的 AI 助手框架，支持对接大模型、接入飞书 &#x2F; 企业微信等渠道。<br>macOS 13 上核心要点：</p>
+<ul>
+<li>必须 Node.js 22+</li>
+<li>用 官方一键脚本 安装</li>
+<li>飞书用 WebSocket 长连接（最稳、不用公网 &#x2F;ngrok）</li>
+<li>飞书配置：AppID + AppSecret + 权限 + 事件订阅</li>
+</ul>
+<hr>
+<h1 id="macOS-13-环境准备（必须）"><a href="#macOS-13-环境准备（必须）" class="headerlink" title="macOS 13 环境准备（必须）"></a>macOS 13 环境准备（必须）</h1><h2 id="打开终端"><a href="#打开终端" class="headerlink" title="打开终端"></a>打开终端</h2><p>   聚焦搜索（Command + 空格）→ 输入 Terminal</p>
+<h2 id="安装-Homebrew（没装就执行）"><a href="#安装-Homebrew（没装就执行）" class="headerlink" title="安装 Homebrew（没装就执行）"></a>安装 Homebrew（没装就执行）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/bin/bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)</span>&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="安装-Node-js-22（推荐-brew）"><a href="#安装-Node-js-22（推荐-brew）" class="headerlink" title="安装 Node.js 22（推荐 brew）"></a>安装 Node.js 22（推荐 brew）</h2> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">brew install node@22</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>   验证：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>   要求：v22.x 以上。</p>
+<h2 id="解决-macOS-13-权限（常见坑）"><a href="#解决-macOS-13-权限（常见坑）" class="headerlink" title="解决 macOS 13 权限（常见坑）"></a>解决 macOS 13 权限（常见坑）</h2><ul>
+<li>系统设置 → 隐私与安全性 → 完全磁盘访问权限</li>
+<li>勾选：终端 &#x2F;iTerm</li>
+<li>修复 brew 权限（M1&#x2F;M2）：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chown</span> -R $(<span class="built_in">whoami</span>) /opt/homebrew</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>–</p>
+<h1 id="安装-OpenClaw（macOS-13-官方方式）"><a href="#安装-OpenClaw（macOS-13-官方方式）" class="headerlink" title="安装 OpenClaw（macOS 13 官方方式）"></a>安装 OpenClaw（macOS 13 官方方式）</h1><h2 id="一键安装（推荐）"><a href="#一键安装（推荐）" class="headerlink" title="一键安装（推荐）"></a>一键安装（推荐）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">curl -fsSL https://openclaw.ai/install.sh | bash</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>   它会自动：</p>
+<ul>
+<li>装CLI</li>
+<li>装 daemon（后台服务）</li>
+<li>配置环境变量</li>
+</ul>
+<h2 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h2>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">openclaw --version</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>输出版本即成功。</p>
+<h2 id="启动服务（本地网关）"><a href="#启动服务（本地网关）" class="headerlink" title="启动服务（本地网关）"></a>启动服务（本地网关）</h2>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">openclaw start</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>   默认端口：18789</p>
+<p>   浏览器访问：</p>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">http://localhost:18789</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>   看到 OpenClaw 控制台即正常。</p>
+<hr>
+<h1 id="三、飞书开放平台创建应用（关键）"><a href="#三、飞书开放平台创建应用（关键）" class="headerlink" title="三、飞书开放平台创建应用（关键）"></a>三、飞书开放平台创建应用（关键）</h1><h2 id="进入飞书开放平台"><a href="#进入飞书开放平台" class="headerlink" title="进入飞书开放平台"></a>进入飞书开放平台</h2><p>   <a target="_blank" rel="noopener" href="https://open.feishu.cn/">https://open.feishu.cn/</a><br>   登录 → 开发者后台 → 创建企业自建应用。</p>
+<h2 id="填写应用信息"><a href="#填写应用信息" class="headerlink" title="填写应用信息"></a>填写应用信息</h2><ul>
+<li>应用名称：OpenClaw助手</li>
+<li>图标、描述随便填</li>
+<li>创建</li>
+</ul>
+<h2 id="添加「机器人」能力"><a href="#添加「机器人」能力" class="headerlink" title="添加「机器人」能力"></a>添加「机器人」能力</h2><p>   左侧：添加应用能力 → 机器人。</p>
+<h2 id="拿到-AppID-AppSecret"><a href="#拿到-AppID-AppSecret" class="headerlink" title="拿到 AppID &#x2F; AppSecret"></a>拿到 AppID &#x2F; AppSecret</h2><p>   左侧：凭证与基础信息<br>   复制并保存：</p>
+<ul>
+<li>App ID（cli_xxxx…）</li>
+<li>App Secret（很长一串）</li>
+</ul>
+<h2 id="开通权限（必须）"><a href="#开通权限（必须）" class="headerlink" title="开通权限（必须）"></a>开通权限（必须）</h2><p>   左侧：权限管理<br>   开启以下（搜索 im: 即可批量勾选）：</p>
+<ul>
+<li>im:message:readonly</li>
+<li>im:message.p2p_msg:readonly</li>
+<li>im:message:send_as_bot</li>
+<li>im:resource</li>
+<li>contact:user.base:readonly</li>
+</ul>
+<h2 id="事件订阅（长连接，不用公网）"><a href="#事件订阅（长连接，不用公网）" class="headerlink" title="事件订阅（长连接，不用公网）"></a>事件订阅（长连接，不用公网）</h2><p>   左侧：事件与回调 → 事件配置<br>   请求方式：使用长连接接收事件（WebSocket）<br>   添加事件：搜索并勾选 im.message.receive_v1（接收消息）<br>   保存</p>
+<h2 id="发布应用"><a href="#发布应用" class="headerlink" title="发布应用"></a>发布应用</h2><p>   左侧：版本管理与发布 → 创建版本 → 发布<br>   个人应用一般自动审核通过。</p>
+<hr>
+<h1 id="OpenClaw-安装飞书插件并配置"><a href="#OpenClaw-安装飞书插件并配置" class="headerlink" title="OpenClaw 安装飞书插件并配置"></a>OpenClaw 安装飞书插件并配置</h1><h2 id="安装飞书插件"><a href="#安装飞书插件" class="headerlink" title="安装飞书插件"></a>安装飞书插件</h2>   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">openclaw plugins install @m1heng-clawd/feishu</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>   自动安装并重启服务。</p>
+<h2 id="进入飞书配置向导"><a href="#进入飞书配置向导" class="headerlink" title="进入飞书配置向导"></a>进入飞书配置向导</h2>   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">openclaw config feishu</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>依次输入：</p>
+<ul>
+<li>App ID（从飞书复制）</li>
+<li>App Secret（从飞书复制）</li>
+<li>选择连接模式：websocket（推荐）</li>
+<li>站点：China</li>
+<li>群聊策略：open（@机器人即可回复）</li>
+<li>系统：macos</li>
+</ul>
+<h2 id="重启-OpenClaw-生效"><a href="#重启-OpenClaw-生效" class="headerlink" title="重启 OpenClaw 生效"></a>重启 OpenClaw 生效</h2>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">openclaw restart</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="测试飞书聊天"><a href="#测试飞书聊天" class="headerlink" title="测试飞书聊天"></a>测试飞书聊天</h1><p>   飞书 → 通讯录 → 找到你的应用 → 发起私聊<br>   发一句：你好<br>   OpenClaw 控制台看到日志、飞书收到回复 → 成功。</p>
+<h1 id="macOS-13-常见坑-解决"><a href="#macOS-13-常见坑-解决" class="headerlink" title="macOS 13 常见坑 &amp; 解决"></a>macOS 13 常见坑 &amp; 解决</h1><h2 id="command-not-found-openclaw"><a href="#command-not-found-openclaw" class="headerlink" title="command not found: openclaw"></a>command not found: openclaw</h2>   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;export PATH=&quot;/opt/homebrew/bin:$PATH&quot;&#x27;</span> &gt;&gt; ~/.zshrc</span><br><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="端口-18789-被占用"><a href="#端口-18789-被占用" class="headerlink" title="端口 18789 被占用"></a>端口 18789 被占用</h2>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">lsof -i :18789</span><br><span class="line"><span class="built_in">kill</span> -9 进程PID</span><br><span class="line">openclaw start</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="飞书收不到消息"><a href="#飞书收不到消息" class="headerlink" title="飞书收不到消息"></a>飞书收不到消息</h2><p>   确认事件订阅是长连接<br>   权限全开、AppID&#x2F;Secret 正确<br>   重启 openclaw + 重启飞书应用</p>
+<hr>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>   macOS 13：装 Node.js 22 + OpenClaw 官方脚本<br>   飞书：企业自建应用 + 机器人 + 长连接事件<br>   本地即可跑，不用公网、不用 ngrok<br>   接入后即可在飞书私聊 &#x2F; 群聊（@机器人）使用本地 AI</p>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://xihese.eu.org">曦曦</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://xihese.eu.org">https://xihese.eu.org</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">此文章版权归曦曦所有，如有转载，请注明来自原作者</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/OpenClaw/">OpenClaw</a></div><div class="post-share"><div class="social-share" data-image="/img/imgs/covers/cover33.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/05/17/62.Maven/" title="IDEA 与 Maven"><img class="cover" src="/img/imgs/covers/cover53.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">IDEA 与 Maven</div></div><div class="info-2"><div class="info-item-1">一、Maven 是什么？（通俗易懂讲解）核心定义   Maven 是 Java 项目的构建与依赖管理工具，简单说：帮你管理 jar 包、编译代码、打包项目、运行测试，告别手动导包、手动配置的麻烦。  核心作用   依赖管理：自动下载 jar 包及其关联包，无需手动找包、导包   项目构建：一键完成编译→测试→打包→部署   统一规范：所有项目目录结构、配置格式一致，团队协作更高效   跨平台：Windows、Mac、Linux 通用  二、Windows 系统搭建 Maven（详细步骤）   前置条件   必须先安装 JDK 8+ 并配置好 JAVA_HOME 环境变量（未配置先装 JDK）。 步骤 1：下载 Maven   打开官网：https://maven.apache.org/download.cgi   找到 Binary zip archive，下载最新版（如 apache-maven-3.9.9-bin.zip）   解压到无中文、无空格路径（推荐）：   D:\Environment\apache-maven-3.9.9 步骤 2：配置系统环境变量   右键「此电...</div></div></div></a><a class="pagination-related" href="/2026/03/11/60.tomcat/" title="Ubuntu 与 tomcat"><img class="cover" src="/img/imgs/covers/cover42.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Ubuntu 与 tomcat</div></div><div class="info-2"><div class="info-item-1">Tomcat 是什么Tomcat 是一个免费开源的 Java Web 服务器，用来运行 Java 开发的网站、接口、Spring Boot 打包的 war 包。要运行 Tomcat，必须先安装 JDK。  前置：安装 JDK（必须）12sudo apt updatesudo apt install openjdk-8-jdk -y  验证是否安装成功： 1java -version 出现版本信息即成功。  下载并解压 Tomcat进入安装目录1cd /usr/local  下载 Tomcat（这里用 9 版本，稳定）123  sudo wget https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.85/bin/apache-tomcat-9.0.85.tar.gz 解压   123sudo tar -zxvf apache-tomcat-9.0.85.tar.gz 重命名（方便使用）   123sudo mv apache-tomcat-9.0.85 tomcat9  #配置 Tomcat 管理员账户（可选但推荐） 123su...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">曦曦</div><div class="author-info-description">欲买桂花同载酒</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://xihe.eu.org"><i class="fas fa-heart"></i><span>回到小窝</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is XiXi‘s Blog !</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">总述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#macOS-13-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87%EF%BC%88%E5%BF%85%E9%A1%BB%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">macOS 13 环境准备（必须）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF"><span class="toc-number">2.1.</span> <span class="toc-text">打开终端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-Homebrew%EF%BC%88%E6%B2%A1%E8%A3%85%E5%B0%B1%E6%89%A7%E8%A1%8C%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">安装 Homebrew（没装就执行）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-Node-js-22%EF%BC%88%E6%8E%A8%E8%8D%90-brew%EF%BC%89"><span class="toc-number">2.3.</span> <span class="toc-text">安装 Node.js 22（推荐 brew）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3-macOS-13-%E6%9D%83%E9%99%90%EF%BC%88%E5%B8%B8%E8%A7%81%E5%9D%91%EF%BC%89"><span class="toc-number">2.4.</span> <span class="toc-text">解决 macOS 13 权限（常见坑）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-OpenClaw%EF%BC%88macOS-13-%E5%AE%98%E6%96%B9%E6%96%B9%E5%BC%8F%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">安装 OpenClaw（macOS 13 官方方式）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%EF%BC%88%E6%8E%A8%E8%8D%90%EF%BC%89"><span class="toc-number">3.1.</span> <span class="toc-text">一键安装（推荐）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E5%AE%89%E8%A3%85"><span class="toc-number">3.2.</span> <span class="toc-text">验证安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%EF%BC%88%E6%9C%AC%E5%9C%B0%E7%BD%91%E5%85%B3%EF%BC%89"><span class="toc-number">3.3.</span> <span class="toc-text">启动服务（本地网关）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E9%A3%9E%E4%B9%A6%E5%BC%80%E6%94%BE%E5%B9%B3%E5%8F%B0%E5%88%9B%E5%BB%BA%E5%BA%94%E7%94%A8%EF%BC%88%E5%85%B3%E9%94%AE%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">三、飞书开放平台创建应用（关键）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5%E9%A3%9E%E4%B9%A6%E5%BC%80%E6%94%BE%E5%B9%B3%E5%8F%B0"><span class="toc-number">4.1.</span> <span class="toc-text">进入飞书开放平台</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A1%AB%E5%86%99%E5%BA%94%E7%94%A8%E4%BF%A1%E6%81%AF"><span class="toc-number">4.2.</span> <span class="toc-text">填写应用信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E3%80%8C%E6%9C%BA%E5%99%A8%E4%BA%BA%E3%80%8D%E8%83%BD%E5%8A%9B"><span class="toc-number">4.3.</span> <span class="toc-text">添加「机器人」能力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%BF%E5%88%B0-AppID-AppSecret"><span class="toc-number">4.4.</span> <span class="toc-text">拿到 AppID &#x2F; AppSecret</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E9%80%9A%E6%9D%83%E9%99%90%EF%BC%88%E5%BF%85%E9%A1%BB%EF%BC%89"><span class="toc-number">4.5.</span> <span class="toc-text">开通权限（必须）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E8%AE%A2%E9%98%85%EF%BC%88%E9%95%BF%E8%BF%9E%E6%8E%A5%EF%BC%8C%E4%B8%8D%E7%94%A8%E5%85%AC%E7%BD%91%EF%BC%89"><span class="toc-number">4.6.</span> <span class="toc-text">事件订阅（长连接，不用公网）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%91%E5%B8%83%E5%BA%94%E7%94%A8"><span class="toc-number">4.7.</span> <span class="toc-text">发布应用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#OpenClaw-%E5%AE%89%E8%A3%85%E9%A3%9E%E4%B9%A6%E6%8F%92%E4%BB%B6%E5%B9%B6%E9%85%8D%E7%BD%AE"><span class="toc-number">5.</span> <span class="toc-text">OpenClaw 安装飞书插件并配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E9%A3%9E%E4%B9%A6%E6%8F%92%E4%BB%B6"><span class="toc-number">5.1.</span> <span class="toc-text">安装飞书插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5%E9%A3%9E%E4%B9%A6%E9%85%8D%E7%BD%AE%E5%90%91%E5%AF%BC"><span class="toc-number">5.2.</span> <span class="toc-text">进入飞书配置向导</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E5%90%AF-OpenClaw-%E7%94%9F%E6%95%88"><span class="toc-number">5.3.</span> <span class="toc-text">重启 OpenClaw 生效</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E9%A3%9E%E4%B9%A6%E8%81%8A%E5%A4%A9"><span class="toc-number">6.</span> <span class="toc-text">测试飞书聊天</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#macOS-13-%E5%B8%B8%E8%A7%81%E5%9D%91-%E8%A7%A3%E5%86%B3"><span class="toc-number">7.</span> <span class="toc-text">macOS 13 常见坑 &amp; 解决</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#command-not-found-openclaw"><span class="toc-number">7.1.</span> <span class="toc-text">command not found: openclaw</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3-18789-%E8%A2%AB%E5%8D%A0%E7%94%A8"><span class="toc-number">7.2.</span> <span class="toc-text">端口 18789 被占用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A3%9E%E4%B9%A6%E6%94%B6%E4%B8%8D%E5%88%B0%E6%B6%88%E6%81%AF"><span class="toc-number">7.3.</span> <span class="toc-text">飞书收不到消息</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">8.</span> <span class="toc-text">总结</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/05/17/62.Maven/" title="IDEA 与 Maven"><img src="/img/imgs/covers/cover53.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="IDEA 与 Maven"/></a><div class="content"><a class="title" href="/2026/05/17/62.Maven/" title="IDEA 与 Maven">IDEA 与 Maven</a><time datetime="2026-05-16T16:11:01.000Z" title="发表于 2026-05-17 00:11:01">2026-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/05/61.OpenClaw/" title="OpenClaw"><img src="/img/imgs/covers/cover33.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OpenClaw"/></a><div class="content"><a class="title" href="/2026/04/05/61.OpenClaw/" title="OpenClaw">OpenClaw</a><time datetime="2026-04-04T19:21:01.000Z" title="发表于 2026-04-05 03:21:01">2026-04-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/03/11/60.tomcat/" title="Ubuntu 与 tomcat"><img src="/img/imgs/covers/cover42.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Ubuntu 与 tomcat"/></a><div class="content"><a class="title" href="/2026/03/11/60.tomcat/" title="Ubuntu 与 tomcat">Ubuntu 与 tomcat</a><time datetime="2026-03-10T19:21:01.000Z" title="发表于 2026-03-11 03:21:01">2026-03-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/02/12/59.php/" title="php"><img src="/img/imgs/covers/cover32.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="php"/></a><div class="content"><a class="title" href="/2026/02/12/59.php/" title="php">php</a><time datetime="2026-02-11T16:20:00.000Z" title="发表于 2026-02-12 00:20:00">2026-02-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/11/58.go-pj/" title="使用Go语言实现一个贪吃蛇游戏"><img src="/img/imgs/covers/cover4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用Go语言实现一个贪吃蛇游戏"/></a><div class="content"><a class="title" href="/2026/01/11/58.go-pj/" title="使用Go语言实现一个贪吃蛇游戏">使用Go语言实现一个贪吃蛇游戏</a><time datetime="2026-01-10T19:21:01.000Z" title="发表于 2026-01-11 03:21:01">2026-01-11</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2021 - 2026 By 曦曦</span></div><div class="footer_custom_text">欢迎访问本站，希望本站的内容可以帮助到你</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"></div><script src="js/sakura.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/fireworks.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/click-heart.min.js" async="async" mobile="true"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/click-show-text.min.js" data-mobile="true" data-text="落,霞,与,孤,鹜,齐,飞,秋,水,共,长,天,一,色" data-fontsize="30px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.4"></script></div></div></body></html>

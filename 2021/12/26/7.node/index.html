@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>在macOS上两行命令配置好Node和Git | 曦曦的小窝</title><meta name="author" content="曦曦"><meta name="copyright" content="曦曦"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="macOS上的node和git的简单配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在macOS上两行命令配置好Node和Git">
+<meta property="og:url" content="http://example.com/2021/12/26/7.node/index.html">
+<meta property="og:site_name" content="曦曦的小窝">
+<meta property="og:description" content="macOS上的node和git的简单配置">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/imgs/covers/cover1.jpg">
+<meta property="article:published_time" content="2021-12-26T03:21:01.000Z">
+<meta property="article:modified_time" content="2021-12-28T04:33:01.000Z">
+<meta property="article:author" content="曦曦">
+<meta property="article:tag" content="node">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/imgs/covers/cover1.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "在macOS上两行命令配置好Node和Git",
+  "url": "http://example.com/2021/12/26/7.node/",
+  "image": "http://example.com/img/imgs/covers/cover1.jpg",
+  "datePublished": "2021-12-26T03:21:01.000Z",
+  "dateModified": "2021-12-28T04:33:01.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "曦曦",
+      "url": "https://xihe.eu.org"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="http://example.com/2021/12/26/7.node/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":true,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '在macOS上两行命令配置好Node和Git',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      if ($loadingBox.classList.contains('loaded')) return
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+
+  if (document.readyState === 'complete') {
+    preloader.endLoading()
+  } else {
+    window.addEventListener('load', preloader.endLoading)
+    document.addEventListener('DOMContentLoaded', preloader.endLoading)
+    // Add timeout protection: force end after 7 seconds
+    setTimeout(preloader.endLoading, 7000)
+  }
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div class="bg-animation" id="web_bg" style="background-color: #efefef;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-university"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-sitemap"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 面板</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/pay/"><i class="fa-fw fa fa-ils"></i><span> 打赏</span></a></li><li><a class="site-page child" href="/messageboard/"><i class="fa-fw fa fa-asterisk"></i><span> 留言</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/myself/"><i class="fa-fw fas fa-sun"></i><span> 曦曦</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 小窝</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/imgs/Tops/top9.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">曦曦的小窝</span></a><a class="nav-page-title" href="/"><span class="site-name">在macOS上两行命令配置好Node和Git</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-university"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-sitemap"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 面板</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/pay/"><i class="fa-fw fa fa-ils"></i><span> 打赏</span></a></li><li><a class="site-page child" href="/messageboard/"><i class="fa-fw fa fa-asterisk"></i><span> 留言</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 关于</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/myself/"><i class="fa-fw fas fa-sun"></i><span> 曦曦</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 小窝</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">在macOS上两行命令配置好Node和Git</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-12-26T03:21:01.000Z" title="发表于 2021-12-26 11:21:01">2021-12-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-12-28T04:33:01.000Z" title="更新于 2021-12-28 12:33:01">2021-12-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Tools/">Tools</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我这里是macOS Catalina（10.15），如果是macOS 11（big sur） 和 macOS 12（Monterey）也适用。<br>老版本的macOS有些不被支持，请查阅相关文档</p>
+<hr>
+<h1 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h1><h2 id="什么是noode-js"><a href="#什么是noode-js" class="headerlink" title="什么是noode.js"></a>什么是noode.js</h2><h2 id="Node-js-是一个基于-Chrome-V8-引擎的-JavaScript-运行环境。Node-js-使用了一个事件驱动、非阻塞式-I-O-的模型，使其轻量又高效。简单的说-Node-js-就是运行在服务端的-JavaScript，利用JavaScript在服务端进行编程。Node-js是一个让JavaScript运行在服务器端的开发平台，它让JavaScript的触角伸到了服务器端，可以与PHP、JSP、Python、Ruby平起平坐。Node-js不是一种独立的语言，与PHP、JSP、Python、Perl、Ruby的“既是语言，也是平台”不同，Node-js使用JavaScript进行编程，运行在JavaScript引擎上（V8）。nodejs开发的构成就成利用npm开发的社区提供的大量的第三方包加上基本的ECMAScript脚本语言以及node平台提供的一系列编程接口进行编程。-代码安装Node-js使用代码安装node-js我们会用到一个工具就是我的homebrew（自带npm）安装命令如下：-检查node-js和npm是安装如果macOS上安装上了node-js和npm，macOS会告诉我版本号返回node-js版本号返回npm版本号"><a href="#Node-js-是一个基于-Chrome-V8-引擎的-JavaScript-运行环境。Node-js-使用了一个事件驱动、非阻塞式-I-O-的模型，使其轻量又高效。简单的说-Node-js-就是运行在服务端的-JavaScript，利用JavaScript在服务端进行编程。Node-js是一个让JavaScript运行在服务器端的开发平台，它让JavaScript的触角伸到了服务器端，可以与PHP、JSP、Python、Ruby平起平坐。Node-js不是一种独立的语言，与PHP、JSP、Python、Perl、Ruby的“既是语言，也是平台”不同，Node-js使用JavaScript进行编程，运行在JavaScript引擎上（V8）。nodejs开发的构成就成利用npm开发的社区提供的大量的第三方包加上基本的ECMAScript脚本语言以及node平台提供的一系列编程接口进行编程。-代码安装Node-js使用代码安装node-js我们会用到一个工具就是我的homebrew（自带npm）安装命令如下：-检查node-js和npm是安装如果macOS上安装上了node-js和npm，macOS会告诉我版本号返回node-js版本号返回npm版本号" class="headerlink" title="Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。Node.js 使用了一个事件驱动、非阻塞式 I&#x2F;O 的模型，使其轻量又高效。简单的说 Node.js 就是运行在服务端的 JavaScript，利用JavaScript在服务端进行编程。Node.js是一个让JavaScript运行在服务器端的开发平台，它让JavaScript的触角伸到了服务器端，可以与PHP、JSP、Python、Ruby平起平坐。Node.js不是一种独立的语言，与PHP、JSP、Python、Perl、Ruby的“既是语言，也是平台”不同，Node.js使用JavaScript进行编程，运行在JavaScript引擎上（V8）。nodejs开发的构成就成利用npm开发的社区提供的大量的第三方包加上基本的ECMAScript脚本语言以及node平台提供的一系列编程接口进行编程。## 代码安装Node.js使用代码安装node.js我们会用到一个工具就是我的homebrew（自带npm）安装命令如下：## 检查node.js和npm是安装如果macOS上安装上了node.js和npm，macOS会告诉我版本号返回node.js版本号返回npm版本号"></a>Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。<br>Node.js 使用了一个事件驱动、非阻塞式 I&#x2F;O 的模型，使其轻量又高效。<br>简单的说 Node.js 就是运行在服务端的 JavaScript，利用JavaScript在服务端进行编程。<br>Node.js是一个让JavaScript运行在服务器端的开发平台，它让JavaScript的触角伸到了服务器端，可以与PHP、JSP、Python、Ruby平起平坐。<br>Node.js不是一种独立的语言，与PHP、JSP、Python、Perl、Ruby的“既是语言，也是平台”不同，Node.js使用JavaScript进行编程，运行在JavaScript引擎上（V8）。<br>nodejs开发的构成就成利用npm开发的社区提供的大量的第三方包加上基本的ECMAScript脚本语言以及node平台提供的一系列编程接口进行编程。<br>## 代码安装Node.js<br>使用代码安装node.js我们会用到一个工具就是我的homebrew（自带npm）<br>安装命令如下：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure><br>## 检查node.js和npm是安装<br>如果macOS上安装上了node.js和npm，macOS会告诉我版本号<br>返回node.js版本号<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node - v</span><br></pre></td></tr></table></figure><br>返回npm版本号<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm - v</span><br></pre></td></tr></table></figure></h2><h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="什么是Git"><a href="#什么是Git" class="headerlink" title="什么是Git"></a>什么是Git</h2><p>Git是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。<br>也是Linus Torvalds为了帮助管理Linux内核开发而开发的一个开放源码的版本控制软件。<br>Torvalds 开始着手开发 Git 是为了作为一种过渡方案来替代 BitKeeper。</p>
+<h2 id="代码安装Git"><a href="#代码安装Git" class="headerlink" title="代码安装Git"></a>代码安装Git</h2><p>使用代码安装Git我们会用到一个工具就是我的homebrew<br>安装命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
+<h2 id="检查Git是安装"><a href="#检查Git是安装" class="headerlink" title="检查Git是安装"></a>检查Git是安装</h2><p>如果macOS上安装上了Git，macOS会告诉我版本号<br>返回Git版本号</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git - v</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>1、打开macOS终端<br>2、输入代码下载 Git 和node.js<br>3、检查是否下载成功</p>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://xihe.eu.org">曦曦</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://xihe.eu.org">https://xihe.eu.org</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">此文章版权归曦曦所有，如有转载，请注明来自原作者</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/node/">node</a></div><div class="post-share"><div class="social-share" data-image="/img/imgs/covers/cover1.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2022/01/18/8.pip/" title="修改python的pip源"><img class="cover" src="/img/imgs/covers/cover7.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">修改python的pip源</div></div><div class="info-2"><div class="info-item-1">前言我这里是Windows10&#x2F;11专业工作版(其他Windows版本也适用)如果你的设备是已经是结束支持的Windows7，请查阅其他相关是手册  什么是pippip 是 Python 包管理工具，该工具提供了对Python 包的查找、下载、安装、卸载的功能。目前如果你在 python.org 下载最新版本的安装包，则是已经自带了该工具。注意：Python 2.7.9 + 或 Python 3.4+ 以上版本都自带 pip 工具。  修改pip在使用Python安装包工具pip时经常会出现下载很慢的情况，这其中有很大一部分原因和pip的源有关.在我们安装python后，通常python解释器自带pip这个工具，但是这里pip是设置的默认源，也就是官方源：https://pypi.org/simple这个源在国内的下载速度是很慢的，所以我们为了提高包的下载速度我们可以通过换源来实现。 Python pip国内源路径阿里云 http://mirrors.aliyun.com/pypi/simple/豆瓣(douban) http://pypi.douban.com/sim...</div></div></div></a><a class="pagination-related" href="/2021/11/16/6.homebrew/" title="在macOS上优雅安装homebrew"><img class="cover" src="/img/imgs/covers/cover10.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">在macOS上优雅安装homebrew</div></div><div class="info-2"><div class="info-item-1">前言我这里是macOS Catalina（10.15），如果是macOS 11（big sur） 和 macOS 12（Monterey）也适用。老版本的macOS有些不被支持，请查阅相关文档  homebrew是什么Homebrew官网：英文：https://brew.sh中文：https://brew.sh/index_zh-cnHomebrew是MacOS（或 Linux）的软件包管理器。通过它，我们可以方便的对Mac上的各种应用软件进行管理，例如：安装、更新、查看、搜索、卸载等。Homebrew，可谓是Mac神器，几乎每一位Mac使用者都会安装它。用Homebrew官网的一句话总结：Homebrew 使 macOS（或您的 Linux 系统）更完整。  安装homebrew打开终端在启动台中点击终端，点击打开终端 输入指令在终端命令行窗口输入安装命令。这里需要特别说明几点内容。下面是Homebrew官方给出的安装命令：（如果没有魔法网络，不要使用此命令安装！） 1/bin/bash -c &quot;$(curl -fsSL https://raw.githubuserc...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">曦曦</div><div class="author-info-description">欲买桂花同载酒</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">73</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">28</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://xihe.eu.org"><i class="fas fa-heart"></i><span>回到小窝</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is XiXi‘s Blog !</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Node-js"><span class="toc-number">2.</span> <span class="toc-text">Node.js</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFnoode-js"><span class="toc-number">2.1.</span> <span class="toc-text">什么是noode.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Node-js-%E6%98%AF%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8E-Chrome-V8-%E5%BC%95%E6%93%8E%E7%9A%84-JavaScript-%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E3%80%82Node-js-%E4%BD%BF%E7%94%A8%E4%BA%86%E4%B8%80%E4%B8%AA%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8%E3%80%81%E9%9D%9E%E9%98%BB%E5%A1%9E%E5%BC%8F-I-O-%E7%9A%84%E6%A8%A1%E5%9E%8B%EF%BC%8C%E4%BD%BF%E5%85%B6%E8%BD%BB%E9%87%8F%E5%8F%88%E9%AB%98%E6%95%88%E3%80%82%E7%AE%80%E5%8D%95%E7%9A%84%E8%AF%B4-Node-js-%E5%B0%B1%E6%98%AF%E8%BF%90%E8%A1%8C%E5%9C%A8%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%9A%84-JavaScript%EF%BC%8C%E5%88%A9%E7%94%A8JavaScript%E5%9C%A8%E6%9C%8D%E5%8A%A1%E7%AB%AF%E8%BF%9B%E8%A1%8C%E7%BC%96%E7%A8%8B%E3%80%82Node-js%E6%98%AF%E4%B8%80%E4%B8%AA%E8%AE%A9JavaScript%E8%BF%90%E8%A1%8C%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E7%9A%84%E5%BC%80%E5%8F%91%E5%B9%B3%E5%8F%B0%EF%BC%8C%E5%AE%83%E8%AE%A9JavaScript%E7%9A%84%E8%A7%A6%E8%A7%92%E4%BC%B8%E5%88%B0%E4%BA%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%EF%BC%8C%E5%8F%AF%E4%BB%A5%E4%B8%8EPHP%E3%80%81JSP%E3%80%81Python%E3%80%81Ruby%E5%B9%B3%E8%B5%B7%E5%B9%B3%E5%9D%90%E3%80%82Node-js%E4%B8%8D%E6%98%AF%E4%B8%80%E7%A7%8D%E7%8B%AC%E7%AB%8B%E7%9A%84%E8%AF%AD%E8%A8%80%EF%BC%8C%E4%B8%8EPHP%E3%80%81JSP%E3%80%81Python%E3%80%81Perl%E3%80%81Ruby%E7%9A%84%E2%80%9C%E6%97%A2%E6%98%AF%E8%AF%AD%E8%A8%80%EF%BC%8C%E4%B9%9F%E6%98%AF%E5%B9%B3%E5%8F%B0%E2%80%9D%E4%B8%8D%E5%90%8C%EF%BC%8CNode-js%E4%BD%BF%E7%94%A8JavaScript%E8%BF%9B%E8%A1%8C%E7%BC%96%E7%A8%8B%EF%BC%8C%E8%BF%90%E8%A1%8C%E5%9C%A8JavaScript%E5%BC%95%E6%93%8E%E4%B8%8A%EF%BC%88V8%EF%BC%89%E3%80%82nodejs%E5%BC%80%E5%8F%91%E7%9A%84%E6%9E%84%E6%88%90%E5%B0%B1%E6%88%90%E5%88%A9%E7%94%A8npm%E5%BC%80%E5%8F%91%E7%9A%84%E7%A4%BE%E5%8C%BA%E6%8F%90%E4%BE%9B%E7%9A%84%E5%A4%A7%E9%87%8F%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85%E5%8A%A0%E4%B8%8A%E5%9F%BA%E6%9C%AC%E7%9A%84ECMAScript%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%E4%BB%A5%E5%8F%8Anode%E5%B9%B3%E5%8F%B0%E6%8F%90%E4%BE%9B%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E7%BC%96%E7%A8%8B%E6%8E%A5%E5%8F%A3%E8%BF%9B%E8%A1%8C%E7%BC%96%E7%A8%8B%E3%80%82-%E4%BB%A3%E7%A0%81%E5%AE%89%E8%A3%85Node-js%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%A0%81%E5%AE%89%E8%A3%85node-js%E6%88%91%E4%BB%AC%E4%BC%9A%E7%94%A8%E5%88%B0%E4%B8%80%E4%B8%AA%E5%B7%A5%E5%85%B7%E5%B0%B1%E6%98%AF%E6%88%91%E7%9A%84homebrew%EF%BC%88%E8%87%AA%E5%B8%A6npm%EF%BC%89%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4%E5%A6%82%E4%B8%8B%EF%BC%9A-%E6%A3%80%E6%9F%A5node-js%E5%92%8Cnpm%E6%98%AF%E5%AE%89%E8%A3%85%E5%A6%82%E6%9E%9CmacOS%E4%B8%8A%E5%AE%89%E8%A3%85%E4%B8%8A%E4%BA%86node-js%E5%92%8Cnpm%EF%BC%8CmacOS%E4%BC%9A%E5%91%8A%E8%AF%89%E6%88%91%E7%89%88%E6%9C%AC%E5%8F%B7%E8%BF%94%E5%9B%9Enode-js%E7%89%88%E6%9C%AC%E5%8F%B7%E8%BF%94%E5%9B%9Enpm%E7%89%88%E6%9C%AC%E5%8F%B7"><span class="toc-number">2.2.</span> <span class="toc-text">Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。Node.js 使用了一个事件驱动、非阻塞式 I&#x2F;O 的模型，使其轻量又高效。简单的说 Node.js 就是运行在服务端的 JavaScript，利用JavaScript在服务端进行编程。Node.js是一个让JavaScript运行在服务器端的开发平台，它让JavaScript的触角伸到了服务器端，可以与PHP、JSP、Python、Ruby平起平坐。Node.js不是一种独立的语言，与PHP、JSP、Python、Perl、Ruby的“既是语言，也是平台”不同，Node.js使用JavaScript进行编程，运行在JavaScript引擎上（V8）。nodejs开发的构成就成利用npm开发的社区提供的大量的第三方包加上基本的ECMAScript脚本语言以及node平台提供的一系列编程接口进行编程。## 代码安装Node.js使用代码安装node.js我们会用到一个工具就是我的homebrew（自带npm）安装命令如下：1brew install node## 检查node.js和npm是安装如果macOS上安装上了node.js和npm，macOS会告诉我版本号返回node.js版本号1node - v返回npm版本号1npm - v</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Git"><span class="toc-number">3.</span> <span class="toc-text">Git</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFGit"><span class="toc-number">3.1.</span> <span class="toc-text">什么是Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%89%E8%A3%85Git"><span class="toc-number">3.2.</span> <span class="toc-text">代码安装Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5Git%E6%98%AF%E5%AE%89%E8%A3%85"><span class="toc-number">3.3.</span> <span class="toc-text">检查Git是安装</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">4.</span> <span class="toc-text">结语</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/05/17/62.Maven/" title="IDEA 与 Maven"><img src="/img/imgs/covers/cover53.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="IDEA 与 Maven"/></a><div class="content"><a class="title" href="/2026/05/17/62.Maven/" title="IDEA 与 Maven">IDEA 与 Maven</a><time datetime="2026-05-16T16:11:01.000Z" title="发表于 2026-05-17 00:11:01">2026-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/05/61.OpenClaw/" title="OpenClaw"><img src="/img/imgs/covers/cover33.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OpenClaw"/></a><div class="content"><a class="title" href="/2026/04/05/61.OpenClaw/" title="OpenClaw">OpenClaw</a><time datetime="2026-04-04T19:21:01.000Z" title="发表于 2026-04-05 03:21:01">2026-04-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/03/11/60.tomcat/" title="Ubuntu 与 tomcat"><img src="/img/imgs/covers/cover42.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Ubuntu 与 tomcat"/></a><div class="content"><a class="title" href="/2026/03/11/60.tomcat/" title="Ubuntu 与 tomcat">Ubuntu 与 tomcat</a><time datetime="2026-03-10T19:21:01.000Z" title="发表于 2026-03-11 03:21:01">2026-03-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/02/12/59.php/" title="php"><img src="/img/imgs/covers/cover32.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="php"/></a><div class="content"><a class="title" href="/2026/02/12/59.php/" title="php">php</a><time datetime="2026-02-11T16:20:00.000Z" title="发表于 2026-02-12 00:20:00">2026-02-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/11/58.go-pj/" title="使用Go语言实现一个贪吃蛇游戏"><img src="/img/imgs/covers/cover4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用Go语言实现一个贪吃蛇游戏"/></a><div class="content"><a class="title" href="/2026/01/11/58.go-pj/" title="使用Go语言实现一个贪吃蛇游戏">使用Go语言实现一个贪吃蛇游戏</a><time datetime="2026-01-10T19:21:01.000Z" title="发表于 2026-01-11 03:21:01">2026-01-11</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2021 - 2026 By 曦曦</span></div><div class="footer_custom_text">欢迎访问本站，希望本站的内容可以帮助到你</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"></div><script src="js/sakura.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/fireworks.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/click-heart.min.js" async="async" mobile="true"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/click-show-text.min.js" data-mobile="true" data-text="落,霞,与,孤,鹜,齐,飞,秋,水,共,长,天,一,色" data-fontsize="30px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.4"></script></div></div></body></html>
